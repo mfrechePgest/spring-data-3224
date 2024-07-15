@@ -13,7 +13,6 @@ import java.util.*;
 public class DemoSpecification
         implements Specification<DemoObject> {
 
-    private final List<Predicate> filters = new ArrayList<>();
 
     public DemoSpecification() {
     }
@@ -23,6 +22,7 @@ public class DemoSpecification
                                  @NonNull CriteriaQuery<?> criteriaQuery,
                                  @NonNull CriteriaBuilder criteriaBuilder) {
         // dumb filter
+        final List<Predicate> filters = new ArrayList<>();
         filters.add(criteriaBuilder.gt(root.get(DemoObject_.ID), 0));
 
         return criteriaBuilder.and(filters.toArray(new Predicate[0]));
