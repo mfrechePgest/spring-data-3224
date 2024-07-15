@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: demo
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:postgresql://localhost:5432/demo_db
+    username: demo
+    password: demo
+    driver-class-name: org.postgresql.Driver
